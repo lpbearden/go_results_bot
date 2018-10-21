@@ -1,9 +1,9 @@
 package main
 
 import (
-	scraper "csgo_scraper"
 	"fmt"
 	"github.com/dghubble/go-twitter/twitter"
+	scraper "github.com/lpbearden/csgo_scraper"
 	"log"
 	s "strings"
 	"time"
