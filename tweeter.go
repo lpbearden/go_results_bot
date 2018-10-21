@@ -65,7 +65,6 @@ func sendTweet(m scraper.Match) {
 		tweetStr = fmt.Sprintf("%s beat %s %s-%s on %s \nhttps://hltv.org%s\n#%s", m.Winner, m.Loser, m.WinScore, m.LoseScore, scraper.CsMap[m.MapName], m.MatchUrl, m.Event)
 	}
 
-	fmt.Println(tweetStr)
-	// tweet, _, _ := client.Statuses.Update(tweetStr, nil)
-	// log.Print("Posted Tweet: ", tweet.Text)
+	tweet, _, _ := client.Statuses.Update(tweetStr, nil)
+	log.Print("Posted Tweet: ", tweet.Text)
 }
