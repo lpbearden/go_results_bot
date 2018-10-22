@@ -1,1 +1,1 @@
-web: tweeter
+program: bin/tweeter
