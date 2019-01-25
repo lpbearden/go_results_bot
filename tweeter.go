@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/dghubble/go-twitter/twitter"
-	scraper "github.com/lpbearden/csgo_scraper"
 	"log"
 	s "strings"
 	"time"
+
+	"github.com/dghubble/go-twitter/twitter"
+	scraper "github.com/lpbearden/csgo_scraper"
 )
 
 var client = GetTwitterClient()
@@ -22,13 +23,17 @@ func main() {
 		match := scraper.GetMatch()
 
 		// check if the match is in the last match
-		if match.MatchUrl != lastMatch {
-			// double check by looking at the last tweet
-			if !isLastTweet(match) {
-				// set lastMatch to current match and send tweet
-				lastMatch = match.MatchUrl
-				sendTweet(match)
+		if match.Winner != "" {
+			if match.MatchUrl != lastMatch {
+				// double check by looking at the last tweet
+				if !isLastTweet(match) {
+					// set lastMatch to current match and send tweet
+					lastMatch = match.MatchUrl
+					sendTweet(match)
+				}
 			}
+		} else {
+			fmt.Println("match winner was blank wtf")
 		}
 		fmt.Println("-------------- sleeping")
 		time.Sleep(duration)
