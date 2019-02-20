@@ -1,5 +1,5 @@
 # CSGO Results Bot @go_stats
-Tweets out the most recent 1 star an up matches.
+Tweets out the most recent 1 star and up matches.
 
 You can find the twitter here: [@go_stats](https://twitter.com/go_stats) 
 
