@@ -8,6 +8,7 @@ import (
 	"github.com/dghubble/oauth1"
 )
 
+// GetTwitterClient - Function to create twitter client instance
 func GetTwitterClient() *twitter.Client {
 	consumerKey := os.Getenv("TWITTER_CONSUMER_KEY")
 	consumerSecret := os.Getenv("TWITTER_CONSUMER_SECRET")
