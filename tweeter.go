@@ -22,8 +22,9 @@ func main() {
 		// go get the latest match
 		match := scraper.GetMatch()
 
-		// check if the match is in the last match
-		if match.Winner != "" {
+		//trim match winner and check if its an empty string (some results are that way)
+		if len(s.TrimSpace(match.Winner)) != 0 {
+			// check if the match is in the last match
 			if match.MatchUrl != lastMatch {
 				// double check by looking at the last tweet
 				if !isLastTweet(match) {
@@ -33,7 +34,8 @@ func main() {
 				}
 			}
 		} else {
-			fmt.Println("match winner was blank wtf")
+			fmt.Println("empty match: ")
+			fmt.Println(match)
 		}
 		fmt.Println("-------------- sleeping")
 		time.Sleep(duration)
