@@ -1,5 +1,5 @@
 # CSGO Results Bot @go_stats
-Tweets out the most recent 1 star an up matches.
+Tweets out the most recent 1 star and up matches.
 
 You can find the twitter here: [@go_stats](https://twitter.com/go_stats) 
 
@@ -17,3 +17,4 @@ https://hltv.org/matches/2327720/mibr-vs-cloud9-ecs-season-6-north-america …
 - [ ] add in player stats / insights
 - [ ] handle ties
 - [ ] handle duplicate match results that aren't truly dupes
+- [ ] handle blank match tweets
