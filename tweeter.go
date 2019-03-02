@@ -67,9 +67,9 @@ func isLastTweet(m scraper.Match) bool {
 func sendTweet(m scraper.Match) {
 	tweetStr := ""
 	if len(m.Maps) > 0 {
-		tweetStr = fmt.Sprintf("%s beat %s %s-%s on %s \nhttps://hltv.org%s\n#%s", m.Winner, m.Loser, m.WinScore, m.LoseScore, s.Join(m.Maps, ", "), m.MatchUrl, m.Event)
+		tweetStr = fmt.Sprintf("%s beat %s %s-%s on %s \nhttps://hltv.org%s\n#%s", m.Winner, m.Loser, m.WinScore, m.LoseScore, s.Join(m.Maps, ", "), m.MatchUrl, s.Split(m.Event, " ")[0])
 	} else {
-		tweetStr = fmt.Sprintf("%s beat %s %s-%s on %s \nhttps://hltv.org%s\n#%s", m.Winner, m.Loser, m.WinScore, m.LoseScore, scraper.CsMap[m.MapName], m.MatchUrl, m.Event)
+		tweetStr = fmt.Sprintf("%s beat %s %s-%s on %s \nhttps://hltv.org%s\n#%s", m.Winner, m.Loser, m.WinScore, m.LoseScore, scraper.CsMap[m.MapName], m.MatchUrl, s.Split(m.Event, " ")[0])
 	}
 
 	tweet, _, _ := client.Statuses.Update(tweetStr, nil)
