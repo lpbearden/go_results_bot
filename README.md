@@ -15,5 +15,5 @@ https://hltv.org/matches/2327720/mibr-vs-cloud9-ecs-season-6-north-america …
 ### TODO
 - [x] fix hashtags for events
 - [ ] add in player stats / insights
-- [ ] handle duplicate match results that aren't truly dupes
+- [x] handle duplicate match results that aren't truly dupes
 - [x] handle blank match tweets
